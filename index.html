@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MovieFlix</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+
+        <div class="logo">MovieFlix</div>
+
+        <div class="search-container">
+            <input
+                type="text"
+                id="searchInput"
+                class="search-input"
+                placeholder="Search movies, actors, keywords..."
+                autocomplete="off"
+            >
+        </div>
+
+        <div class="filters">
+
+            <select id="generalFilter">
+                <option value="none">Select Genre</option>
+            </select>
+
+            <select id="yearFilter">
+                <option value="all">All Years</option>
+            </select>
+
+            <select id="sortFilter">
+                <option value="none">Sort By</option>
+                <option value="popularity.desc">Most Popular</option>
+                <option value="vote_average.desc">Highest Rated</option>
+                <option value="primary_release_date.desc">Latest Release</option>
+                <option value="title.asc">A → Z</option>
+            </select>
+
+            <button class="clear-button" id="clearBtn">
+                Clear All
+            </button>
+
+        </div>
+    </header>
+
+
+    <main class="main-content">
+
+        <section id="trendingSection">
+
+            <h2 class="section-title">🔥 Trending Now</h2>
+
+            <div class="carousel-container">
+
+                <button
+                    class="carousel-button left"
+                    id="trendingPrev"
+                    aria-label="Previous"
+                >
+                    ‹
+                </button>
+
+                <div class="carousel" id="trendingCarousel">
+                    <div class="loading">Loading trending movies...</div>
+                </div>
+
+                <button
+                    class="carousel-button right"
+                    id="trendingNext"
+                    aria-label="Next"
+                >
+                    ›
+                </button>
+
+            </div>
+        </section>
+
+        <section>
+
+            <h2 class="section-title" id="randomSectionTitle">
+                🎬 Discover Movies
+            </h2>
+
+            <div class="movie-grid" id="movieGrid">
+                <div class="loading">Loading movies...</div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
 
