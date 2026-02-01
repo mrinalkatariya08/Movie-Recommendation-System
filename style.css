@@ -1,1 +1,234 @@
+:root {
+    --primary: #e50914;
+    --dark: #141414;
+    --light-dark: #1f1f1f;
+    --border: #333;
+    --text: #ffffff;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--dark);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 20px;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.9),
+        rgba(0,0,0,0.5)
+    );
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 60%;
+    padding: 12px 22px;
+    border-radius: 30px;
+    border: 2px solid var(--border);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+select,
+.clear-button {
+    padding: 8px 18px;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+select:hover {
+    border-color: var(--primary);
+}
+
+.clear-button {
+    background-color: var(--primary);
+    display: none;
+    font-weight: bold;
+}
+
+.clear-button:hover {
+    background-color: #ff0a16;
+    transform: scale(1.05);
+}
+
+.clear-button.show {
+    display: inline-block;
+}
+
+
+
+.carousel-container {
+    position: relative;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.movie-card {
+    min-width: 280px;
+    background: var(--light-dark);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.movie-card:hover {
+    transform: scale(1.08);
+    z-index: 10;
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.movie-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.movie-rating {
+    color: gold;
+    font-size: 14px;
+}
+
+
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.7);
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 10px 16px;
+    cursor: pointer;
+    z-index: 20;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.carousel-button:hover {
+    background: var(--primary);
+}
+
+.carousel-button.left {
+    left: 5px;
+}
+
+.carousel-button.right {
+    right: 5px;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-input {
+        width: 90%;
+    }
+
+    .carousel-button {
+        display: none;
+    }
+
+    .movie-card img {
+        height: 350px;
+    }
+}
 
